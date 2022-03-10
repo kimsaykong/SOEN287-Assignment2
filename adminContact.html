@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kimsay KONG Personal Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Supermercado+One&family=Zen+Kurenaido&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<table class="layout mainLayout">
+    <tr class="nav">
+        <th ><a href="adminIndex.html">Home</a></th>
+        <th><a href="adminResume.html">Resume</a></th>
+        <th><a href="adminProjects.html">Projects</a></th>
+        <th style="background: #3d5583"><a href="adminContact.html">Contact</a></th>
+        <th><a href="adminSocial.html">Social</a></th>
+        <th><a href="logout.html">Log out</a></th>
+    </tr>
+    <tr>
+        <td colspan="6" class="title"><h1>Contact page administration</h1></td>
+    </tr>
+    <tr>
+        <td class="admin" colspan="6">
+            <div>
+                <div class="right">
+
+                    <input class="submit" type="submit" value="ReadMessage" onclick="readMessage()">
+                    <input type="file" id="inputFile" accept=".txt" style="display: inline-block">
+                    <textarea id="tempData" style="display: none"></textarea>
+                </div>
+            </div>
+            <div id="message" style="display: block">
+            </div>
+        </td>
+    </tr>
+</table>
+<script>
+    function readMessage(){
+        var uploadFile = document.getElementById("inputFile").files[0];
+        var fileReader = new FileReader();
+        fileReader.onload = function(fileLoadedEvent) {
+            var elemHdl = document.getElementById("tempData");
+            elemHdl.value = fileLoadedEvent.target.result;
+            createTable(fileLoadedEvent.target.result.split("\n"))
+        };
+        fileReader.readAsText(uploadFile, "UTF-8");
+    }
+    function createTable(arr){
+        let tbl = document.createElement('table');
+        tbl.style.width = "90%";
+            let tr1 = document.createElement('tr');
+                let td11 = document.createElement('td');
+                    td11.innerHTML = "Name : ";
+                    td11.classList.add("left");
+                let td12 = document.createElement('td');
+                    td12.innerHTML = arr[0];
+                    td12.classList.add("right");
+            tr1.appendChild(td11);
+            tr1.appendChild(td12);
+
+        let tr2 = document.createElement('tr');
+        let td21 = document.createElement('td');
+        td21.innerHTML = "Email : ";
+        td21.classList.add("left");
+        let td22 = document.createElement('td');
+        td22.innerHTML = arr[1];
+        td22.classList.add("right");
+        tr2.appendChild(td21);
+        tr2.appendChild(td22);
+
+        let tr3 = document.createElement('tr');
+        let td31 = document.createElement('td');
+        td31.innerHTML = "Phone : ";
+        td31.classList.add("left");
+        let td32 = document.createElement('td');
+        td32.innerHTML = arr[2];
+        td32.classList.add("right");
+        tr3.appendChild(td31);
+        tr3.appendChild(td32);
+
+        let tr4 = document.createElement('tr');
+        let td41 = document.createElement('td');
+        td41.innerHTML = "Message : ";
+        td41.classList.add("left");
+        let td42 = document.createElement('td');
+        td42.innerHTML = arr[3];
+        td42.classList.add("right");
+        tr4.appendChild(td41);
+        tr4.appendChild(td42);
+
+        tbl.appendChild(tr1);
+        tbl.appendChild(tr2);
+        tbl.appendChild(tr3);
+        tbl.appendChild(tr4);
+        document.getElementById("message").appendChild(tbl);
+    }
+</script>
+</body>
+</html>

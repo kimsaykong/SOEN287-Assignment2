@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kimsay KONG Personal Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Supermercado+One&family=Zen+Kurenaido&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<table class="layout">
+    <tr class="nav">
+        <th><a href="adminIndex.html">Home</a></th>
+        <th><a href="adminResume.html">Resume</a></th>
+        <th><a href="adminProjects.html">Projects</a></th>
+        <th><a href="adminContact.html">Contact</a></th>
+        <th style="background: #3d5583"><a href="adminSocial.html">Social</a></th>
+        <th><a href="logout.html">Log out</a></th>
+    </tr>
+    <tr>
+        <td colspan="6" class="title"><h1>Social page administration</h1></td>
+    </tr>
+    <tr>
+    <td class="form content-left adminpage" colspan="6">
+        <div>
+            <div class="left"><label for="s1">Social Link 1 :</label></div>
+            <div class="right"><textarea id="s1"></textarea></div>
+        </div>
+        <div>
+            <div class="left"><label for="s2"> Social Link 2 :</label></div>
+            <div class="right"><textarea id="s2"></textarea></div>
+        </div>
+        <div>
+            <div class="left"><label for="s3"> Social Link 3 :</label></div>
+            <div class="right"><textarea id="s3"></textarea></div>
+        </div>
+        <div>
+            <div class="right">
+                <input class="submit" type="submit" value="Submit" onclick="submitSocial()">
+            </div>
+        </div>
+    </td>
+    </tr>
+</table>
+<script type="text/javascript">
+    function submitSocial(){
+
+        var inData = document.getElementById("s1").value
+            + "\n\n\n" + document.getElementById("s2").value
+            + "\n\n\n" + document.getElementById("s3").value;
+
+        var data2Blob = new File([inData], "adminSocial", {type: "text/plain"});
+
+        var blob2URL = window.URL.createObjectURL(data2Blob);
+
+        /* Create a HTML anchor tag via JavaScript, and force download */
+
+        var anchorTag = document.createElement("a");
+
+        anchorTag.href = blob2URL;
+
+        anchorTag.download = "adminSocial";
+
+        anchorTag.click();
+    }
+</script>
+</body>
+</html>

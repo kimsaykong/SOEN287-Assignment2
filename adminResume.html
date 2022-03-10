@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kimsay KONG Personal Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Supermercado+One&family=Zen+Kurenaido&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<table class="layout">
+    <tr class="nav">
+        <th><a href="adminIndex.html">Home</a></th>
+        <th style="background: #3d5583"><a href="adminResume.html">Resume</a></th>
+        <th><a href="adminProjects.html">Projects</a></th>
+        <th><a href="adminContact.html">Contact</a></th>
+        <th><a href="adminSocial.html.html">Social</a></th>
+        <th><a href="logout.html">Log out</a></th>
+    </tr>
+    <tr>
+        <td colspan="6" class="title"><h1>Resume page administration</h1></td>
+    </tr>
+    <tr>
+        <td class="form content-left adminpage" colspan="6">
+            <div>
+                <div class="left"><label for="edu">Education :</label></div>
+                <div class="right"><textarea id="edu"></textarea></div>
+            </div>
+            <div>
+                <div class="left"><label for="skills"> Skill set :</label></div>
+                <div class="right"><textarea id="skills"></textarea></div>
+            </div>
+            <div>
+                <div class="left"><label for="award"> Awards / Recognition :</label></div>
+                <div class="right"><textarea id="award"></textarea></div>
+            </div>
+            <div>
+                <div class="left"><label for="work"> Work Experience :</label></div>
+                <div class="right"><textarea id="work"></textarea></div>
+            </div>
+            <div>
+                <div class="left"><label for="ref"> Referees :</label></div>
+                <div class="right"><textarea id="ref"></textarea></div>
+            </div>
+            <div>
+                <div class="right">
+                    <input class="submit" type="submit" value="Submit" onclick="submitResume()">
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+    function submitResume(){
+
+        var inData = document.getElementById("edu").value
+            + "\n\n\n" + document.getElementById("skills").value
+            + "\n\n\n" + document.getElementById("award").value
+            + "\n\n\n" + document.getElementById("work").value
+            + "\n\n\n" + document.getElementById("ref").value;
+
+        var data2Blob = new File([inData], "adminResume", {type: "text/plain"});
+
+        var blob2URL = window.URL.createObjectURL(data2Blob);
+
+        /* Create a HTML anchor tag via JavaScript, and force download */
+
+        var anchorTag = document.createElement("a");
+
+        anchorTag.href = blob2URL;
+
+        anchorTag.download = "adminResume";
+
+        anchorTag.click();
+    }
+</script>
+</body>
+</html>

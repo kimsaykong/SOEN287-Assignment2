@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kimsay KONG Personal Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Supermercado+One&family=Zen+Kurenaido&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<table class="layout">
+    <tr class="nav">
+        <th><a href="adminIndex.html">Home</a></th>
+        <th><a href="adminResume.html">Resume</a></th>
+        <th style="background: #3d5583"><a href="adminProjects.html">Projects</a></th>
+        <th><a href="adminContact.html">Contact</a></th>
+        <th><a href="adminSocial.html.html">Social</a></th>
+        <th><a href="logout.html">Log out</a></th>
+    </tr>
+    <tr>
+        <td colspan="6" class="title"><h1>Project page administration</h1></td>
+    </tr>
+    <tr>
+        <td class="form content-left adminpage" colspan="6">
+            <div>
+                <div class="left"><label for="project">My Project :</label></div>
+                <div class="right"><textarea id="project"></textarea></div>
+            </div>
+            <div>
+                <div class="right">
+                    <input class="submit" type="submit" value="Submit" onclick="submitProject()">
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+    function submitProject(){
+
+        var inData = document.getElementById("project").value;
+
+        var data2Blob = new File([inData], "adminProject", {type: "text/plain"});
+
+        var blob2URL = window.URL.createObjectURL(data2Blob);
+
+        /* Create a HTML anchor tag via JavaScript, and force download */
+
+        var anchorTag = document.createElement("a");
+
+        anchorTag.href = blob2URL;
+
+        anchorTag.download = "adminProject";
+
+        anchorTag.click();
+    }
+</script>
+</body>
+</html>

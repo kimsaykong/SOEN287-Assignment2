@@ -1,0 +1,227 @@
+html{
+    margin: 0;
+    padding: 0;
+    font-family: Zen Kurenaido,sans-serif, Helvetica, Arial;
+    font-size: larger;
+    color: #EDEDED;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #3d5583;
+}
+.layout{
+    width: 100%;
+    margin: 0;
+}
+.nav{
+    background-color: #2a2c4f;
+    height: 5%;
+    margin: 0;
+    font-family: "Supermercado One";
+}
+.footer{
+    border: 1px solid black;
+    height: 5%;
+}
+.content{
+    height: 80%;
+    text-align: center;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: large;
+
+}
+.content-left{
+    height: 80%;
+    text-align: left;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: large;
+    padding-left: 5%;
+}
+.mainLayout{
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+    position: absolute;
+    height: 100%;
+
+}
+th{
+    border: none;
+    background-color: #475C7A;
+}
+td{
+    margin: 0;
+    padding: 0;
+    border: none;
+    vertical-align: top;
+}
+
+image{
+    display: block;
+}
+
+textarea{
+    width: 80%;
+    height: 15em;
+    resize: none;
+}
+.bio{
+    padding-right: 80px;
+    padding-left: 80px;
+    font-size: 20px;
+}
+.title{
+    padding-top: 2em;
+    text-align: center;
+    height: 10%;
+    background-color: #3d5583;
+    color: white;
+    font-family: Pacifico;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:link:active, a:visited:active {
+    color: #D8737F;
+}
+#profilePicture{
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+}
+.button{
+    background-color: #D8737F;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    vertical-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.projects ol {
+    list-style: upper-roman;
+    line-height: 30px;
+    font-size: 15px;
+    font-family: Poiret One, sans-serif;
+}
+
+.projects ol li strong{
+    font-size: 18px;
+    font-family: Poiret One, sans-serif;
+}
+
+.projects ol li p{
+    padding-right: 15%;
+}
+
+.projects ol li{
+    font-size: 20px;
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+
+.form div{
+    display: inline-block;
+    width: 100%;
+    padding: 3px;
+}
+.form div input{
+    display: inline-block;
+    width: 100%;
+    inline-size: 250px;
+    height: 20px;
+    text-decoration: none;
+    border: none;
+}
+
+.form div .left{
+    float: left;
+    width: 15%;
+    text-align: right;
+}
+.form div .right{
+    float: right;
+    width: 80%;
+    text-align: left;
+}
+.admin div{
+    display: inline-block;
+    width: 100%;
+    padding: 3px;
+}
+
+.admin div input{
+    display: inline-block;
+    width: 100%;
+    inline-size: 250px;
+    height: 20px;
+}
+
+
+.admin div .left{
+    float: left;
+    width: 40%;
+    text-align: right;
+}
+.admin div .right{
+    float: right;
+    width: 55%;
+    text-align: left;
+}
+.admin div .submit{
+    background-color: #D8737F;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    vertical-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    height: 50px;
+    width: auto;
+}
+.admin div .submit:hover {
+    background-color: #AB6C82;
+}
+
+.adminpage div{
+    display: inline-block;
+    width: 100%;
+    padding: 3px;
+}
+
+.adminpage div input{
+    display: inline-block;
+    width: 100%;
+    inline-size: 250px;
+    height: 20px;
+}
+
+.adminpage div .submit{
+    background-color: #D8737F;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    vertical-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    height: 50px;
+    width: auto;
+}
+.adminpage div .submit:hover {
+    background-color: #AB6C82;
+}
+
