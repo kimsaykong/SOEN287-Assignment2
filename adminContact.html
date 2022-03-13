@@ -29,6 +29,7 @@
 
                     <input class="submit" type="submit" value="ReadMessage" onclick="readMessage()">
                     <input type="file" id="inputFile" accept=".txt" style="display: inline-block">
+                    <label for="tempData"></label>
                     <textarea id="tempData" style="display: none"></textarea>
                 </div>
             </div>
@@ -95,6 +96,7 @@
         tbl.appendChild(tr2);
         tbl.appendChild(tr3);
         tbl.appendChild(tr4);
+        document.getElementById("message").innerHTML="";
         document.getElementById("message").appendChild(tbl);
     }
 </script>
